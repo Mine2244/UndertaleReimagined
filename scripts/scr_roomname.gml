@@ -1,0 +1,6 @@
+roomname="error"
+if argument0=0 then roomname="--"
+if argument0=16 then roomname="Ruins - Entrance"
+if argument0=25 then roomname="Ruins - Leaf Pile"
+if argument0=35 then roomname="Ruins - Mouse Hole"
+if argument0=51 then roomname="Ruins - Home"
