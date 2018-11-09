@@ -26,13 +26,14 @@
           <argument>
             <kind>1</kind>
             <string>myinteract = 3
-global.msc=214
-if talkedto&gt;0 then global.msc=215
-global.typer=4
-global.facechoice=1
-global.faceemotion=2
-mydialoguer = instance_create(0,0,obj_dialoguer)
-talkedto+=1
+global.msc = 214
+if (talkedto &gt; 0)
+    global.msc = 215
+global.typer = 4
+global.facechoice = 1
+global.faceemotion = 2
+mydialoguer = instance_create(0, 0, obj_dialoguer)
+talkedto = (talkedto + 1)
 </string>
           </argument>
         </arguments>
@@ -55,7 +56,8 @@ talkedto+=1
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if global.plot&lt;5.4 or global.plot&gt;6.5 then instance_destroy()
+            <string>if global.plot&lt;5.4 or global.plot&gt;6.5 then 
+    instance_destroy()
 direction=270
 
 </string>

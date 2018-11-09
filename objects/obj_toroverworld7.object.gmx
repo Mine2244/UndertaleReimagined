@@ -167,7 +167,7 @@ if instance_exists(obj_dialoguer) = false and conversation=1 then
    global.currentsong=caster_load("music/tension.ogg")
    caster_loop(global.currentsong,1,1)
    }
-script_execute(scr_npcdir)
+scr_npcdir(0) // TODO: ??
 </string>
           </argument>
         </arguments>

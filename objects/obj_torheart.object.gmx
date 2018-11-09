@@ -75,8 +75,7 @@ image_alpha=0
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
-</string>
+            <string></string>
           </argument>
         </arguments>
       </action>

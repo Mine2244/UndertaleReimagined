@@ -25,7 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>script_execute(SCR_TEXTTYPE)
+            <string>// TODO: ??
+SCR_TEXTTYPE(0)
 
 stringno=0
 stringpos=1 //which character of the string it starts on

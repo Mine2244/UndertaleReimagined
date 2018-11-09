@@ -73,12 +73,12 @@ bullettype=0
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//script_execute(SCR_DIRECT, 3, 1, 10, 0.5, 270, 0.1, 90, 6, 8, spr_dirbullet)
-//script_execute(SCR_DIRECT, 0, 0, 60, 0.4, 270, 0, 90, 6, 18, spr_dirbullet)
-script_execute(SCR_BORDER,0,6)
+            <string>//SCR_DIRECT(3, 1, 10, 0.5, 270, 0.1, 90, 6, 8, spr_dirbullet)
+//SCR_DIRECT(0, 0, 60, 0.4, 270, 0, 90, 6, 18, spr_dirbullet)
+SCR_BORDER(0,6)
 x = xx
 y = yy
-if bullettype=0 then script_execute(SCR_DIRECT, 2.5, 0.2, 0, 0, 0, 0, 0, 0, 0, spr_bulletsm)
+if bullettype=0 then SCR_DIRECT(2.5, 0.2, 0, 0, 0, 0, 0, 0, 0, spr_bulletsm)
 if bullettype=1 then 
    {
    iii=instance_create(x,y,blt_flybullet)
@@ -103,7 +103,7 @@ if bullettype=4 then
    }
 if bullettype=5 then
    {
-   script_execute(SCR_BORDER,0,40)
+   SCR_BORDER(0,40)
    x-=20
    y+=5
    iii=instance_create(x,y,blt_vegbullet)
@@ -111,7 +111,7 @@ if bullettype=5 then
    }
 if bullettype=6 then
    {
-   script_execute(SCR_BORDER,0,40)
+   SCR_BORDER(0,40)
    x-=20
    y+=5
    iii=instance_create(x,y,blt_gravbullet)
@@ -139,7 +139,7 @@ if bullettype=8 then
    }   
 if bullettype=9 then
    {
-   script_execute(SCR_BORDER,0,80)
+   SCR_BORDER(0,80)
    x-=40
    y-=20
    iii=instance_create(x,y,blt_avoidfire)

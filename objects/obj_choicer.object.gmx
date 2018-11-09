@@ -78,7 +78,7 @@ global.choice=-1
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>with creator script_execute(scr_msgup)
+            <string>with creator scr_msgup()
 instance_destroy()
 </string>
           </argument>

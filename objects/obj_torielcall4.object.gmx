@@ -91,9 +91,9 @@ global.msg[4]="* Huh^1?&amp;* Why am I asking?/"
 global.msg[5]="\E0* No reason..^1.&amp;* No reason at all./"
 global.msg[6]="\TS \F0 \T0 %"
 global.msg[7]="* Click.../%%"
-script_execute(scr_writetext,0,"x")
+scr_writetext(0,"x", 0, 0)
 global.interact=1
-script_execute(scr_phoneget,202)
+scr_phoneget(202)
 
 </string>
           </argument>

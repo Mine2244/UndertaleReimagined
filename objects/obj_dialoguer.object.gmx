@@ -36,7 +36,7 @@ if obj_mainchara.y &gt; yy+130 then
      if global.facechoice != 0 then
      {
      writer = instance_create(xx+68,yy-5,OBJ_WRITER)
-     script_execute(scr_facechoice)
+     scr_facechoice()
      }
     else
      writer = instance_create(xx+10,yy-5,OBJ_WRITER)
@@ -46,7 +46,7 @@ if obj_mainchara.y &gt; yy+130 then
     if global.facechoice != 0 then
      {
      writer = instance_create(xx+68,yy+150,OBJ_WRITER)
-     script_execute(scr_facechoice)
+     scr_facechoice()
      }
     else
     writer = instance_create(xx+10,yy+150,OBJ_WRITER)
@@ -124,7 +124,7 @@ if global.facechange=1
     {
      writer.x=xx+68
      writer.writingx=(writer.x+20)
-     script_execute(scr_facechoice)
+     scr_facechoice()
      global.facechange=0 
     }
 </string>

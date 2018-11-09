@@ -51,8 +51,7 @@ caster_loop(global.currentsong,0.4,0.3)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
-</string>
+            <string></string>
           </argument>
         </arguments>
       </action>

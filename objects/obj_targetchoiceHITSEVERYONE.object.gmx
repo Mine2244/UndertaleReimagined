@@ -82,7 +82,7 @@ if xxx=1 then
 global.damage=0
 global.hurtanim[global.mytarget]=5
 instance_destroy()
-break
+exit
 }
 
 if image_speed = 0 then
@@ -94,7 +94,7 @@ if global.monster[i] = 1 then
  mons = global.monsterinstance[i]
 
 hspeed = 0
-script_execute(scr_attackcalc)
+scr_attackcalc()
 global.damage = damage
 global.damage += random(2)
 myx = (x + (sprite_width/2))

@@ -27,7 +27,8 @@
             <kind>1</kind>
             <string>image_xscale=50
 conversation=0
-if global.plot&gt;2 then instance_destroy()
+if global.plot&gt;2 then 
+    instance_destroy()
 </string>
           </argument>
         </arguments>
@@ -50,11 +51,11 @@ if global.plot&gt;2 then instance_destroy()
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>   path_end()
-   obj_toroverworld3.direction=270
-   global.msc=203
-   instance_create(0,0,obj_dialoguer)
-   conversation=3
+            <string>path_end()
+obj_toroverworld3.direction = 270
+global.msc = 203
+instance_create(0, 0, obj_dialoguer)
+conversation = 3
 </string>
           </argument>
         </arguments>
@@ -77,8 +78,12 @@ if global.plot&gt;2 then instance_destroy()
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>with obj_toroverworld3 path_start(path_torielwalk2_2,3,0,true)
-alarm[5]=40
+            <string>with(obj_toroverworld3)
+{
+    path_start(path_torielwalk2_2, 3, 0, true)
+}
+
+alarm[5] = 40
 </string>
           </argument>
         </arguments>
@@ -124,12 +129,12 @@ alarm[5]=40
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>global.msc=202
-global.typer=4
-global.interact=1
-global.facechoice=1
-instance_create(0,0,obj_dialoguer)
-conversation=3
+            <string>global.msc = 202
+global.typer = 4
+global.interact = 1
+global.facechoice = 1
+instance_create(0, 0, obj_dialoguer)
+conversation = 3
 </string>
           </argument>
         </arguments>
@@ -204,17 +209,15 @@ if conversation=4 and obj_toroverworld3.path_position=1 and (abs(obj_mainchara.y
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
-
-if conversation=0 then
- {
-global.msc=202
-global.typer=4
-global.interact=1
-global.facechoice=1
-instance_create(0,0,obj_dialoguer)
-conversation=1
- }
+            <string>if (conversation == 0)
+{
+    global.msc = 202
+    global.typer = 4
+    global.interact = 1
+    global.facechoice = 1
+    instance_create(0, 0, obj_dialoguer)
+    conversation = 1
+}
 </string>
           </argument>
         </arguments>

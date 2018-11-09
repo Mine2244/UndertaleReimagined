@@ -94,7 +94,7 @@ global.msg[6]="* Right^1, right^1, I&amp;  understand./"
 global.msg[7]="\E0* Thank you for being&amp;  patient^1, by the way./"
 global.msg[8]="\TS \F0 \T0 %"
 global.msg[9]="* Click.../%%"
-script_execute(scr_writetext,0,"x")
+scr_writetext(0,"x", 0, 0) // TODO:??
 global.interact=1
 
 

@@ -128,7 +128,7 @@ if(keyboard_check_released(vk_right)){
 
 if keyboard_check(vk_escape) then { quit+=1; if instance_exists(obj_quittingmessage)=false then instance_create(0,0,obj_quittingmessage) }
 else quit=0
-if quit&gt;20 then { sleep(1000); game_end() }
+if quit&gt;20 then { game_end() }
 </string>
           </argument>
         </arguments>

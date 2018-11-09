@@ -190,7 +190,8 @@ if obj_mainchara.y &lt; y+50 then path_speed=4
 image_speed=0.2
 }
 
-script_execute(scr_npcdir)
+
+scr_npcdir(0) //TODO: ??
 </string>
           </argument>
         </arguments>

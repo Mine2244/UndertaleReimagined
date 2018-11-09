@@ -189,7 +189,7 @@ if obj_mainchara.x &gt; x-10 then path_speed=5
 image_speed=0.2
 }
 
-script_execute(scr_npcdir)
+scr_npcdir(0) //TODO: ??
 
 if path_position=1 then
    {

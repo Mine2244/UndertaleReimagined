@@ -222,7 +222,7 @@ if won = 0
     global.xp += global.xpreward[3]
     global.gold += global.goldreward[3]
     tlvl=global.lv
-    script_execute(scr_levelup)
+    scr_levelup()
     caster_stop(global.batmusic)
     caster_free(global.batmusic)
     global.msg[0]="* YOU WON!&amp;* You earned "
@@ -255,7 +255,7 @@ if won = 0
        }
     global.msc=0
     instance_create(global.idealborder[0],global.idealborder[2],OBJ_WRITER)
-    break
+    exit
     }
     
 
@@ -293,7 +293,7 @@ if global.mnfight = 0 and global.myfight = 0 then
          if global.item[0]!= 0 then
               {
                 global.bmenucoord[3]=0
-                script_execute(scr_itemnameb)
+                scr_itemnameb()
                 //sound_play(snd_select)
                 global.msc=9
                }
@@ -306,7 +306,7 @@ if global.mnfight = 0 and global.myfight = 0 then
               OBJ_INSTAWRITER.halt = 3
               instance_create(global.idealborder[0],global.idealborder[2],OBJ_INSTAWRITER)
               keyboard_clear(vk_enter)
-              break
+              exit
        }
   // if you are already in a menu
        
@@ -318,7 +318,7 @@ if global.mnfight = 0 and global.myfight = 0 then
          global.myfight = 1 //attacking
          obj_heart.x = -200
          sound_play(snd_select)
-         script_execute(scr_attack)
+         scr_attack()
          keyboard_clear(vk_enter)
          }
        if global.bmenuno = 10 then
@@ -350,7 +350,7 @@ if global.mnfight = 0 and global.myfight = 0 then
          OBJ_WRITER.halt = 3
          itempos=global.bmenucoord[3]+((global.bmenuno-3)*8)
          thisitemid=global.item[itempos]
-         script_execute(scr_itemuseb,itempos,thisitemid)
+         scr_itemuseb(itempos,thisitemid)
          global.talked=91
          global.myfight = 4 //item usage (i suppose?)
          obj_heart.x = -200
@@ -363,7 +363,7 @@ if global.mnfight = 0 and global.myfight = 0 then
          OBJ_WRITER.halt = 3
          global.mercyuse=global.bmenucoord[4]
          if global.mercyuse=1 then
-         {script_execute(scr_runaway); global.talked=90}
+         {scr_runaway(); global.talked=90}
          if runaway=0 then  sound_play(snd_select)
          global.myfight = 4 //item usage (i suppose?)
          obj_heart.x = -200
@@ -455,7 +455,7 @@ if global.myfight = 1 or global.myfight = 2 or global.mnfight = 3 then obj_heart
 if global.mnfight = 3 then
    {
    global.border = 0
-   script_execute(SCR_BORDERSETUP)
+   SCR_BORDERSETUP()
    if obj_lborder.x = global.idealborder[0] then
       {
       global.typer=1
@@ -499,7 +499,7 @@ if global.mnfight = 3 then
            
 
    
-if global.hp &lt; 1 then script_execute(scr_gameoverb)
+if global.hp &lt; 1 then scr_gameoverb()
 
 if currentplace&lt;global.bmenuno then 
 if sound_isplaying(snd_select) != true sound_play(snd_select)
@@ -572,7 +572,7 @@ if instance_exists(obj_uborder) then
   draw_set_color(c_black)
   draw_rectangle((obj_uborder.x+5),(obj_uborder.y+5),obj_rborder.x, obj_dborder.y, false)
 }
-script_execute(scr_binfowrite)
+scr_binfowrite()
 
 if global.bmenuno=1 and global.myfight=0 and global.mnfight=0 then
    {
@@ -771,7 +771,7 @@ tempcheck=global.bmenuno
        else global.bmenucoord[3]= 2
        mv=1
      }
- if global.bmenuno!=tempcheck then script_execute(scr_itemrewrite)
+ if global.bmenuno!=tempcheck then scr_itemrewrite()
 }
 
 // 0 1   4 5
@@ -819,7 +819,7 @@ if global.bmenuno = 3.5 then
        mv=1
      }
      if mv=1 then sound_play(snd_squeak)
-    if global.bmenuno!=tempcheck then script_execute(scr_itemrewrite)     
+    if global.bmenuno!=tempcheck then scr_itemrewrite()    
 }
       
 
@@ -1003,7 +1003,7 @@ tempcheck=global.bmenuno
        if global.item[6]=0 then global.bmenucoord[3]=3
        if global.item[3]=0 then global.bmenucoord[3]=2
      }
-   if global.bmenuno!=tempcheck then script_execute(scr_itemrewrite)
+   if global.bmenuno!=tempcheck then scr_itemrewrite()
    
 }
 
@@ -1041,7 +1041,7 @@ if global.bmenuno = 3.5 then
      global.bmenucoord[3]=3
      }
    if mv=1 then sound_play(snd_squeak)
-   if global.bmenuno!=tempcheck then script_execute(scr_itemrewrite)
+   if global.bmenuno!=tempcheck then scr_itemrewrite()
    }
 
 

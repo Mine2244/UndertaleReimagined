@@ -229,7 +229,7 @@ else shudder = -shudder
 if shudder = 0 then
   {
    global.hurtanim[myself] = 2
-   break;
+   exit;
   }
 alarm[3] = 2
 
@@ -350,7 +350,7 @@ if global.mnfight = 2 then
 
 if whatiheard=1 and instance_exists(OBJ_WRITER)=false then
  {
-    script_execute(scr_mercystandard)
+    scr_mercystandard()
     if mercy&lt;0 then
      {
      killed=1
@@ -381,13 +381,13 @@ if global.myfight = 2 then
             if whatiheard = 1 then
                {
                    global.msc = 0
-                    script_execute(scr_mercystandard)
+                    scr_mercystandard()
                    global.msg[0] = "* You tried to eat Vegetoid^1,&amp;  but it wasn't weakened&amp;  enough./^"
                    if mercy &lt;0 then
                      {
                     global.msg[0]="* You recovered 7 HP!/^"
                     instance_create(0,0,obj_foodsound)
-                    script_execute(scr_recover,7)
+                    scr_recover(7)
                     sprite_index=spr_vegetoidhurt
                      }
                    OBJ_WRITER.halt = 3
@@ -429,7 +429,7 @@ if global.myfight=4 then
     {
     if global.mercyuse=0 then
       {
-       script_execute(scr_mercystandard)
+       scr_mercystandard()
        if mercy &lt;0 then instance_destroy()
       }
     }

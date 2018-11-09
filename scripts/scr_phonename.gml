@@ -10,22 +10,22 @@ itemid=global.phone[i]
 
 
 
-switch(true)
+switch(itemid)
 {
 //phone numbers
-case itemid=201: 
+case 201: 
         global.phonename[i]="Say Hello"
         break;
-case itemid=202: 
+case 202: 
         global.phonename[i]="Puzzle Help"
         break;
-case itemid=203: 
+case 203: 
         global.phonename[i]="About Yourself"
         break;
-case itemid=204: 
+case 204: 
         global.phonename[i]='Call Her "Mom"'
         break;
-case itemid=205: 
+case 205: 
         global.phonename[i]="Flirt"
         break;
 }

@@ -95,7 +95,7 @@ global.msg[8]="* You will want to leave&amp;  room in your pockets&amp;  for tha
 global.msg[9]="\TS \F0 \T0 %"
 global.msg[10]="* Click.../%%"
 instance_create(140,200,obj_stalkerflowey)
-script_execute(scr_writetext,0,"x")
+scr_writetext(0,"x", 0, 0) //TODO: ??
 global.interact=1
 </string>
           </argument>

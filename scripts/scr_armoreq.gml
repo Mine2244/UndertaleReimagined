@@ -4,5 +4,6 @@ global.item[argument0]=global.armor
 global.armor=argument1
 if global.armor=4 then global.adef = 0
 if global.armor=12 then global.adef = 3
-script_execute(scr_itemnameb)
-script_execute(scr_itemname)
+//TODO: Actually checks if i need to put arguments here
+scr_itemnameb(argument0)
+scr_itemname(argument1)

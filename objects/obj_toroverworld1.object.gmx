@@ -155,7 +155,7 @@ phone=0
   if speed&gt;0 then image_speed=0.20
      }  
   
-script_execute(scr_npcdir)
+scr_npcdir(0) //TODO: ??
 </string>
           </argument>
         </arguments>

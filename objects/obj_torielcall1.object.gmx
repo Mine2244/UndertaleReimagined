@@ -92,7 +92,7 @@ global.msg[5]="* It would be dangerous&amp;  to try to solve them&amp;  yourself
 global.msg[6]="* Be good^1, alright?/"
 global.msg[7]="\TS \F0 \T0 %"
 global.msg[8]="* Click.../%%"
-script_execute(scr_writetext,0,"x")
+scr_writetext(0,"x", 0, 0) //TODO: ??
 global.interact=1
 
 

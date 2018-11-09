@@ -1,46 +1,46 @@
 
-switch(true)
+switch(itemid)
 {
-case itemid=0:
+case 0:
         global.itemname[i]=" "
         break;
-case itemid=1:
+case 1:
         global.itemname[i]="Monster Candy"
         break;
-case itemid=2:
+case 2:
         global.itemname[i]="Croquet Roll"
         break;
-case itemid=3:
+case 3:
         global.itemname[i]="Stick"
         break;
-case itemid=4:
+case 4:
         global.itemname[i]="Bandage"
         break;
-case itemid=5:
+case 5:
         global.itemname[i]="Rock Candy"
         break;
-case itemid=6:
+case 6:
         global.itemname[i]="Pumpkin Rings"
         break;
-case itemid=7:
+case 7:
         global.itemname[i]="Spider Donut"
         break;
-case itemid=8:
+case 8:
         global.itemname[i]="Stoic Onion"
         break;
-case itemid=9:
+case 9:
         global.itemname[i]="Ghost Fruit"
         break;
-case itemid=10:
+case 10:
         global.itemname[i]="Spider Cider"
         break;
-case itemid=11:
+case 11:
         global.itemname[i]="Butterscotch Pie"
         break;
-case itemid=12:
+case 12:
         global.itemname[i]="Faded Ribbon"
         break;
-case itemid=13:
+case 13:
         global.itemname[i]="Toy Knife"
         break;
 }

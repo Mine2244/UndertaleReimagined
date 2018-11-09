@@ -57,7 +57,7 @@ draw_rectangle(global.idealborder[0]-60,global.idealborder[3]+40,global.idealbor
 draw_rectangle(0,global.idealborder[2],global.idealborder[0],global.idealborder[3]+40,false)
 //draw_set_color(c_blue)
 draw_rectangle(640,global.idealborder[2],global.idealborder[1],global.idealborder[3]+40,false)
-script_execute(scr_binfowrite)
+scr_binfowrite()
 </string>
           </argument>
         </arguments>

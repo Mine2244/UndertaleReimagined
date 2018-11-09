@@ -7,7 +7,7 @@ writingy = round(writingy)
 myx = writingx
 myy = writingy
 
-script_execute(SCR_TEXT,global.msc)
+SCR_TEXT(global.msc)
 
 for (n=0; global.msg[n]!="%%%"; n+=1)
 {

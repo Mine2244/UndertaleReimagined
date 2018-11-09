@@ -1,5 +1,6 @@
 // this draws the surface on the screen
-if (surface_exists(screen)) 
+// Obsolete
+/*if (surface_exists(screen)) 
 {
 surface_reset_target();
 draw_clear(0);
@@ -8,4 +9,4 @@ draw_surface_stretched(screen,screen_x,screen_y,screen_w*screen_scale,screen_h*s
 draw_set_blend_mode(bm_normal);
 screen_refresh();
 
-}
+}*/

@@ -13,11 +13,12 @@ while (loop=1)
         }
      if i=10 then
         {
-        script_execute(scr_itemnospace)
+        scr_itemnospace()
         break;
         }
         i+=1
    }
 
-script_execute(scr_itemnameb)
-script_execute(scr_storagename)
+//TODO: Actually checks if i need to put arguments here
+scr_itemnameb(argument1)
+scr_storagename(argument0)

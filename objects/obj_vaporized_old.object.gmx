@@ -95,7 +95,7 @@ line+=1
 if line&gt;(ht/2) then
     {
     instance_destroy()
-    break
+    exit
     }
 alarm[0]=(1+myvapor)
 if myvapor &gt; 1 then sound_play(snd_chug)

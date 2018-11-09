@@ -94,7 +94,7 @@ if line&gt;(ht/2) then
     file_text_write_string(file,"2")
     file_text_close(file)
     instance_destroy()
-    break
+    exit
     }
 alarm[0]=(1+myvapor)
 </string>

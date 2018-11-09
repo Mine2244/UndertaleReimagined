@@ -74,7 +74,7 @@ dtsprite = spr_test_dt
 utsprite = spr_test_ut
 ltsprite = spr_test_lt
 rtsprite = spr_test_rt
-script_execute(scr_npcsetup,2)
+scr_npcsetup(2)
 movementalarm[0] = 20
 movementalarm[1] = -1
 memoryispeed=0
@@ -187,7 +187,7 @@ mydialoguer = instance_create(0,0,obj_dialoguer)
     image_index=1
     image_speed=0.2
     movementalarm[1] = 10 + round(random(10))
-    script_execute(scr_npcdir)
+    scr_npcdir(0) // TODO: ??
     }
 
     if movementalarm[1] = 0 then
@@ -218,7 +218,7 @@ if myinteract = 1 then
    {
    global.interact=1
    image_speed=0.2
-   script_execute(scr_npcdir)
+   scr_npcdir(0) // TODO: ??
    alarm[0]=1
    myinteract=2
    }
@@ -230,36 +230,10 @@ if myinteract = 3 then
      global.interact = 0
      myinteract = 0
      image_speed=memoryispeed
-     script_execute(scr_npcdir)
+     scr_npcdir(0) // TODO: ??
      }
    }
 </string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="4" ename="obj_solidnpcparent">
-      <action>
-        <libid>1</libid>
-        <id>109</id>
-        <kind>0</kind>
-        <userelative>-1</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_move_to</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>0</kind>
-            <string>xprevious</string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string>yprevious</string>
           </argument>
         </arguments>
       </action>
@@ -286,6 +260,32 @@ if myinteract = 3 then
           <argument>
             <kind>0</kind>
             <string>0</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_solidnpcparent">
+      <action>
+        <libid>1</libid>
+        <id>109</id>
+        <kind>0</kind>
+        <userelative>-1</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_move_to</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>0</kind>
+            <string>xprevious</string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string>yprevious</string>
           </argument>
         </arguments>
       </action>

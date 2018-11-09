@@ -25,7 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>script_execute(SCR_TEXTTYPE)
+            <string>// TODO: ??
+SCR_TEXTTYPE(0)
 
 stringno=0
 stringpos=1 //which character of the string it starts on
@@ -36,7 +37,7 @@ myy = writingy
 x=round(x)
 y=round(y)
 
-script_execute(SCR_TEXT,global.msc)
+SCR_TEXT(global.msc)
 
 for (n=0; global.msg[n]!="%%%"; n+=1)
 {
@@ -94,7 +95,7 @@ for (n=1; n &lt; stringpos+1; n=n+1)
 
 if string_char_at(originalstring,n)="&amp;" then
     {
-    script_execute(SCR_NEWLINE)
+    SCR_NEWLINE()
     n = (n + 1)
     }
     
@@ -109,7 +110,7 @@ if string_char_at(originalstring,n)="\" then
     if string_char_at(originalstring,n+1)="W" then mycolor=c_white
     if string_char_at(originalstring,n+1)="X" then mycolor=c_black
     if string_char_at(originalstring,n+1)="B" then mycolor=c_blue
-    if string_char_at(originalstring,n+1)="P" then script_execute(SCR_TEXTSETUP,fnt_plain,c_red,x,y,x+150,43,4,SND_TXT2,10)
+    if string_char_at(originalstring,n+1)="P" then SCR_TEXTSETUP(fnt_plain,c_red,x,y,x+150,43,4,SND_TXT2,10,25) //TODO: ??
     if string_char_at(originalstring,n+1)="C" then
         {
         if instance_exists(obj_choicer)=false then instance_create(0,0,obj_choicer)
@@ -144,7 +145,7 @@ if string_char_at(originalstring,n)="%" then
     
 if myx &gt; writingxend then
     { 
-    script_execute(SCR_NEWLINE)
+    SCR_NEWLINE()
     }
     
 myletter = string_char_at(originalstring, n)

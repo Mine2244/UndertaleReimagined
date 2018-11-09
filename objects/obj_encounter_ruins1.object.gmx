@@ -28,7 +28,7 @@
             <string>alldead=0
 global.encounter=0
 //steps, randomized steps, population, population ID
-script_execute(scr_steps,100,40,monsterpopulation1,202)
+scr_steps(100,40,monsterpopulation1,202)
 </string>
           </argument>
         </arguments>
@@ -54,7 +54,7 @@ script_execute(scr_steps,100,40,monsterpopulation1,202)
             <string>if global.encounter&gt;steps then
 if global.interact=0
    {
-   script_execute(scr_steps,130,80,monsterpopulation1,202)
+   scr_steps(130,80,monsterpopulation1,202)
    global.encounter=0
    battlegroup=random(2)
    if battlegroup&lt;=1 then global.battlegroup=4

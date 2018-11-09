@@ -85,7 +85,7 @@ if m4&gt;0 then caster_loop(menusong4,0.6,1)
    if m3&gt;0 then draw_sprite(spr_flowey,0,190,170)
    if m4&gt;0 then draw_sprite(spr_chairiel,0,40,150)
    }
-script_execute(scr_namingscreen)
+scr_namingscreen()
 
 if naming=3 then
   {

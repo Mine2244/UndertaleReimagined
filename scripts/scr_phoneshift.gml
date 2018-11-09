@@ -6,4 +6,5 @@ for (i=argument0;i<8;i+=1)
   global.phone[i]=global.phone[i+1]
   }
   
-script_execute(scr_phonename)
+//TODO: Actually checks if i need to put arguments here
+scr_phonename(argument1)

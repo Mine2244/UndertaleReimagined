@@ -5,6 +5,7 @@ for (i=argument0;i<8;i+=1)
   {
   global.item[i]=global.item[i+1]
   }
-  
-script_execute(scr_itemnameb)
-script_execute(scr_itemname)
+
+//TODO: Actually checks if i need to put arguments here
+scr_itemnameb(argument1)
+scr_itemname(argument0)

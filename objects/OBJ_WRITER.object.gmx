@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>script_execute(SCR_TEXTTYPE)
+            <string>SCR_TEXTTYPE(0)
 
 x=round(x)
 y=round(y)
@@ -39,7 +39,7 @@ writingy = round(writingy)
 myx = writingx
 myy = writingy
 
-script_execute(SCR_TEXT,global.msc)
+SCR_TEXT(global.msc)
 
 for (n=0; global.msg[n]!="%%%"; n+=1)
 {
@@ -248,7 +248,7 @@ for (n=1; n &lt; stringpos+1; n=n+1)
 
 if string_char_at(originalstring,n)="&amp;" then
     {
-    script_execute(SCR_NEWLINE)
+    SCR_NEWLINE()
     n = (n + 1)
     }
     
@@ -289,7 +289,7 @@ if string_char_at(originalstring,n)="\" then
       if newtyper="F" then global.typer=16
       if newtyper="s" then global.typer=17
       if newtyper="P" then global.typer=18
-      script_execute(SCR_TEXTTYPE,global.typer)
+      SCR_TEXTTYPE(global.typer)
       global.facechange=1
       n+=1
       }    
@@ -324,7 +324,7 @@ if string_char_at(originalstring,n)="%" then
     
 if myx &gt; writingxend then
     { 
-    script_execute(SCR_NEWLINE)
+    SCR_NEWLINE()
     }
     
 myletter = string_char_at(originalstring, n)

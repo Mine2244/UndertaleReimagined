@@ -198,7 +198,7 @@ if ini_section_exists("General") then
     seconds=round(((time/1800-minutes))*60)
     if seconds=60 then seconds=0
     if seconds<10 then seconds="0"+string(seconds)
-    script_execute(scr_roomname,roome)
+    scr_roomname(roome)
     draw_text(70,60,name)
     draw_text(140,60,"LV "+string(love))
     draw_text(210,60,string(minutes)+":"+string(seconds))
@@ -228,7 +228,7 @@ if ini_section_exists("General") then
             if file_exists("file0")=false then room_goto_next()
             else 
             {
-            script_execute(scr_load)
+            scr_load()
             }
            }
         if selected3=1 then

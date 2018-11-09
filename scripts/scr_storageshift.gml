@@ -7,5 +7,6 @@ for (i=argument0;i<10;i+=1)
   global.flag[i+argument2]=global.flag[i+argument2+1]
   }
   
-script_execute(scr_itemnameb)
-script_execute(scr_storagename)
+//TODO: Actually checks if i need to put arguments here
+scr_itemnameb(argument0)
+scr_storagename(argument1)

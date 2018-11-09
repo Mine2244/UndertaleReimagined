@@ -103,7 +103,7 @@ obj_gameover.unpersist=1
             <kind>1</kind>
             <string>global.typer=30
 dingus=1
-script_execute(SCR_TEXTTYPE,global.typer)
+SCR_TEXTTYPE(global.typer)
 global.msc=0
 global.msg[0]="  You cannot give&amp;  up just yet.../"
 global.msg[1]="  "+global.charname+"^1!&amp;  Stay determined.../%%"

@@ -83,7 +83,7 @@ if global.interact=1 and instance_exists(obj_dialoguer)=false then
 global.typer=5
 global.facechoice=0
 global.faceemotion=0
-script_execute(scr_writetext,222,"x")
+scr_writetext(222,"x", 0, 0) // TODO:??
 global.interact=1
 
 

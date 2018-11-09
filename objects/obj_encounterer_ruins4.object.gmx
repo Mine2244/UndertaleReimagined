@@ -27,8 +27,8 @@
             <kind>1</kind>
             <string>alldead=0
 global.encounter=0
-script_execute(scr_steps,90,100,monsterpopulation1,202)
-//script_execute(scr_steps,10,1,10,203)
+scr_steps(90,100,monsterpopulation1,202)
+//scr_steps(10,1,10,203)
 </string>
           </argument>
         </arguments>
@@ -54,8 +54,8 @@ script_execute(scr_steps,90,100,monsterpopulation1,202)
             <string>if global.encounter&gt;steps then
 if global.interact=0
    {
-   script_execute(scr_steps,120,100,monsterpopulation1,202)
-   //script_execute(scr_steps,10,1,10,203)
+   scr_steps(120,100,monsterpopulation1,202)
+   //scr_steps(10,1,10,203)
    global.encounter=0
    battlegroup=random(20)
    if battlegroup&lt;=4 then global.battlegroup=11

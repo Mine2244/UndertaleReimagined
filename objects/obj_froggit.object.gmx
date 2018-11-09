@@ -251,7 +251,7 @@ if global.myfight=4 then
     {
     if global.mercyuse=0 then
       {
-       script_execute(scr_mercystandard)
+       scr_mercystandard()
        if mercy &lt;0 then instance_destroy()
       }
     }

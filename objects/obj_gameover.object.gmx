@@ -84,7 +84,7 @@
 if room=global.currentroom then
    {
    room_persistent=0
-   script_execute(scr_tempload)
+   scr_tempload()
    instance_destroy()
    }
 </string>

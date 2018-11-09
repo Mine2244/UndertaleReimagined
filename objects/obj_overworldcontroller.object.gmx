@@ -174,7 +174,7 @@ if global.menuno=4 then
   seconds=round(((time/1800-minutes))*60)
   if seconds=60 then seconds=59
   if seconds&lt;10 then seconds="0"+string(seconds)
-  script_execute(scr_roomname,roome)
+  scr_roomname(roome)
   draw_text(70+xx,60+yy,name)
   draw_text(140+xx,60+yy,"LV "+string(love))
   draw_text(210+xx,60+yy,string(minutes)+":"+string(seconds))
@@ -227,59 +227,59 @@ if keyboard_multicheck_pressed(vk_enter)
        if global.menucoord[5]=0 then 
            {
            global.menuno=9//dialogue
-           script_execute(scr_itemuseb,global.menucoord[1],global.item[global.menucoord[1]])
+           scr_itemuseb(global.menucoord[1],global.item[global.menucoord[1]])
            }
          if global.menucoord[5]=1 then
            {
            global.menuno=9//Info
-           script_execute(scr_itemdesc,global.item[global.menucoord[1]])
-           script_execute(scr_writetext,0,"x",0,0)
+           scr_itemdesc(global.item[global.menucoord[1]])
+           scr_writetext(0,"x",0,0)
            }
        if global.menucoord[5]=2 then
            {
            global.menuno=9//threw it out
-           script_execute(scr_writetext,12,"x",0,0)
-           script_execute(scr_itemshift,global.menucoord[1],0)
+           scr_writetext(12,"x",0,0)
+           scr_itemshift(global.menucoord[1],0)
            }
        }
    if global.menuno=3 then
           {    
            global.menuno=9//dialogue
-           script_execute(scr_itemuseb,global.menucoord[3],global.phone[global.menucoord[3]])
+           scr_itemuseb(global.menucoord[3],global.phone[global.menucoord[3]])
           }
    if global.menuno=6 then
           {    
            global.menuno=9//dialogue
           
-           script_execute(scr_storageget,global.item[global.menucoord[6]],300)
+           scr_storageget(global.item[global.menucoord[6]],300)
            if noroom=0 then
            {
-            script_execute(scr_writetext,16,"x",0,0)
-           script_execute(scr_itemshift,global.menucoord[6],0)
+            scr_writetext(16,"x",0,0)
+           scr_itemshift(global.menucoord[6],0)
            }
-           else script_execute(scr_writetext,19,"x",0,0)
+           else scr_writetext(19,"x",0,0)
           }
    if global.menuno=7 then
           {    
            global.menuno=9//dialogue
-           script_execute(scr_itemget,global.flag[global.menucoord[7]+300])
+           scr_itemget(global.flag[global.menucoord[7]+300])
            if noroom=0 then
              {
-             script_execute(scr_writetext,17,"x",0,0)
-             script_execute(scr_storageshift,global.menucoord[7],0,300)
+             scr_writetext(17,"x",0,0)
+             scr_storageshift(global.menucoord[7],0,300)
              }
-             else script_execute(scr_writetext,18,"x",0,0)
+             else scr_writetext(18,"x",0,0)
           }
    if global.menuno=1 then 
        {
        global.menuno=5
        global.menucoord[5]=0
        }
-   if global.menuno=4 then script_execute(scr_save)
+   if global.menuno=4 then scr_save()
    if global.menuno=0 then global.menuno+=(global.menucoord[0]+1)
    if global.menuno=3 then 
      {
-     script_execute(scr_phonename)
+     scr_phonename()
      global.menucoord[3]=0
      }
    if global.menuno=1 then
@@ -287,7 +287,7 @@ if keyboard_multicheck_pressed(vk_enter)
         if global.item[0]!=0 then
            {
         global.menucoord[1]=0
-        script_execute(scr_itemname)
+        scr_itemname()
            }
         else global.menuno=0
        }

@@ -331,38 +331,6 @@ with collision_rectangle(bbox_left,bbox_top,bbox_right,bbox_bottom,obj_doorparen
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="obj_sul">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>if global.phasing=0 then
-{
-x = xprevious
-y = yprevious
-
-if global.facing=2 and keyboard_check(vk_left) = false then {x+=3; y-=3}
-if global.facing=3 then {x-=3; y+=3}
-
-moving = 0
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
     <event eventtype="4" ename="obj_sur">
       <action>
         <libid>1</libid>
@@ -396,7 +364,7 @@ moving = 0
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="obj_sdl">
+    <event eventtype="4" ename="obj_sul">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -418,72 +386,11 @@ moving = 0
 x = xprevious
 y = yprevious
 
-if global.facing=3 then {x-=3; y-=3}
-if global.facing=0 and keyboard_check(vk_left) = false then {x+=3; y+=3}
+if global.facing=2 and keyboard_check(vk_left) = false then {x+=3; y-=3}
+if global.facing=3 then {x-=3; y+=3}
 
 moving = 0
 }
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="4" ename="obj_sdr">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>if global.phasing=0 then
-{
-x = xprevious
-y = yprevious
-if global.facing=1 then {x+=3; y-=3}
-if global.facing=0 and keyboard_check(vk_right) = false then {x-=3; y+=3}
-moving = 0
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="4" ename="obj_solidnpcparent">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>
-if global.phasing=0 then
-{
-x = xprevious
-y = yprevious
-
-moving = 0
-}
-
 </string>
           </argument>
         </arguments>
@@ -540,6 +447,99 @@ moving = 0
         </arguments>
       </action>
     </event>
+    <event eventtype="4" ename="obj_solidnpcparent">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>
+if global.phasing=0 then
+{
+x = xprevious
+y = yprevious
+
+moving = 0
+}
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_sdr">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if global.phasing=0 then
+{
+x = xprevious
+y = yprevious
+if global.facing=1 then {x+=3; y-=3}
+if global.facing=0 and keyboard_check(vk_right) = false then {x-=3; y+=3}
+moving = 0
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_sdl">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if global.phasing=0 then
+{
+x = xprevious
+y = yprevious
+
+if global.facing=3 then {x-=3; y-=3}
+if global.facing=0 and keyboard_check(vk_left) = false then {x+=3; y+=3}
+
+moving = 0
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="5" enumb="83">
       <action>
         <libid>1</libid>
@@ -585,7 +585,7 @@ global.menuno=4
           <argument>
             <kind>1</kind>
             <string>if global.debug=1
-script_execute(scr_load)
+scr_load()
 
 </string>
           </argument>
@@ -651,7 +651,7 @@ if collision_rectangle(x+sprite_width/2,y+19,x+sprite_width+15,y+sprite_height,o
    if interactedobject != noone then
     {
    with interactedobject facing = 3
-   with interactedobject script_execute(scr_interact)
+   with interactedobject scr_interact()
     }
    }
 
@@ -664,7 +664,7 @@ if collision_rectangle(x+sprite_width/2,y+19,x-15,y+sprite_height,obj_interactab
    if interactedobject != noone then
      {
    with interactedobject facing = 1
-   with interactedobject script_execute(scr_interact)
+   with interactedobject scr_interact()
      }
    }
 
@@ -677,7 +677,7 @@ if collision_rectangle(x+4,y+20,x+sprite_width-4,y+sprite_height+15,obj_interact
    if interactedobject != noone then
      {
    with interactedobject facing = 2
-   with interactedobject script_execute(scr_interact)
+   with interactedobject scr_interact()
      }
    }
 
@@ -690,7 +690,7 @@ if collision_rectangle(x+4,y+sprite_height-5,x+sprite_width-4,y+5,obj_interactab
    if interactedobject != noone then
      {
    with interactedobject facing = 0
-   with interactedobject script_execute(scr_interact)
+   with interactedobject scr_interact()
      }
    }
    

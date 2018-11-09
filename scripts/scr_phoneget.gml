@@ -11,10 +11,11 @@ while (loop=1)
         }
      if i=8 then
         {
-        script_execute(scr_itemnospace)
+        scr_itemnospace()
         break;
         }
         i+=1
    }
 
-script_execute(scr_phonename)
+//TODO: Actually checks if i need to put arguments here
+scr_phonename(argument0)

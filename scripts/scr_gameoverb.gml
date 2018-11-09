@@ -1,6 +1,5 @@
 global.hp=0
 if global.battlegroup=22 then obj_torielboss.sprite_index=spr_torielboss_mouthcover
-sleep(500)
 sound_stop_all()
 caster_stop(all)
 caster_free(all)

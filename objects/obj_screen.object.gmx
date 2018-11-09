@@ -90,7 +90,7 @@ keyboard_set_map(ord("C"),vk_control)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if global.inbattle=0 then script_execute(scr_end)
+            <string>if global.inbattle=0 then scr_end()
 </string>
           </argument>
         </arguments>
@@ -113,7 +113,7 @@ keyboard_set_map(ord("C"),vk_control)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if global.inbattle=0 then script_execute(scr_begin)
+            <string>if global.inbattle=0 then scr_begin()
 </string>
           </argument>
         </arguments>

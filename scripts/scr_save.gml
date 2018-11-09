@@ -1,8 +1,8 @@
-script_execute(scr_saveprocess)
+scr_saveprocess()
 
 filechoicebk2=global.filechoice
 global.filechoice=9
-script_execute(scr_saveprocess)
+scr_saveprocess()
 global.filechoice=filechoicebk2
 iniwrite=ini_open("undertale.ini")
 ini_write_string("General","Name",global.charname)

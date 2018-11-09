@@ -109,7 +109,7 @@ if line&gt;(ht/2-4) then
     {
     file_text_close(file)
     instance_destroy()
-    break
+    exit
     }
 alarm[0]=(1+myvapor)
 if myvapor &gt; 1 then sound_play(snd_chug)

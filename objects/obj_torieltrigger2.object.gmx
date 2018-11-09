@@ -203,10 +203,7 @@ if conversation=5 and instance_exists(obj_dialoguer)=false then
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
-
-
-</string>
+            <string></string>
           </argument>
         </arguments>
       </action>

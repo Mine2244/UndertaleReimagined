@@ -283,7 +283,7 @@ else shudder = -shudder
 if shudder = 0 then
   {
    global.hurtanim[myself] = 2
-   break;
+   exit;
   }
 alarm[3] = 2
 
@@ -474,7 +474,7 @@ if global.myfight=4 then
     {
     if global.mercyuse=0 then
       {
-       script_execute(scr_mercystandard)
+       scr_mercystandard()
        if mercy &lt;0 then instance_destroy()
       }
     }

@@ -1,18 +1,18 @@
-switch(true)
+switch(argument0)
 {
-case argument0=0:
+case 0:
         break;
-case argument0=1:
+case 1:
      global.msg[0]="\XLa, la.^3 &Time to wake&up and\R smell\X &the^4 pain./";
      global.msg[1]="* Though^2.^4.^6.^8.&It's still a&little shaky./";
      global.msg[2]="fhuehfuehfuehfuheufhe/%";
      global.msg[3]="%%%";
      break;
-case argument0=2:
+case 2:
      global.msg[0]="* TestMonster and its cohorts&draw near!";
      global.msg[1]="%%%";
      break;
-case argument0=3: //monster names
+case 3: //monster names
      global.msg[0] = " "
      if global.monster[0] = 1 then 
      {
@@ -34,12 +34,12 @@ case argument0=3: //monster names
      global.msg[1]="%%%";
      break;
 
-case argument0=7:
+case 7:
      global.msg[0]="   * Spare"
      if global.mercy=0 then global.msg[0]+="&   * Flee"
      break;
 
-case argument0=9: //itemnames for first menu
+case 9: //itemnames for first menu
      global.msg[0] = "   * " + global.itemnameb[0] + "     "
      if global.item[1]!=0 then global.msg[0]+= "* " + global.itemnameb[1]
      global.msg[0]+=" &"
@@ -48,7 +48,7 @@ case argument0=9: //itemnames for first menu
      global.msg[0]+=" &                     PAGE 1"
      global.msg[1]="%%%"
      break;
-case argument0=10: //itemnames for second menu
+case 10: //itemnames for second menu
      global.msg[0] = "   * " + global.itemnameb[4] + "     "
      if global.item[5]!=0 then global.msg[0]+= "* " + global.itemnameb[5]
      global.msg[0]+=" &"
@@ -58,7 +58,7 @@ case argument0=10: //itemnames for second menu
      global.msg[1]="%%%"
      break;
      
-case argument0=11: //recovery item add
+case 11: //recovery item add
      global.msg[0] += " &"
      if global.item[8] < 9990 then
      {
@@ -67,7 +67,7 @@ case argument0=11: //recovery item add
      else global.msg[0] += "* Your HP was maxed out./%"
      break;
 
-case argument0=12: //throwing away an item
+case 12: //throwing away an item
      i=round(random(14))
      if i=0 then global.msg[0]="* You bid a quiet farewell&  to the " + global.itemname[global.menucoord[1]] + "."
      if i=1 then global.msg[0]="* You put the " + global.itemname[global.menucoord[1]] + "&  on the ground and gave it a&  little pat."
@@ -79,7 +79,7 @@ case argument0=12: //throwing away an item
      break;
      
 
-case argument0=14: //RUNNING AWAY
+case 14: //RUNNING AWAY
      i=round(random(20))
      if i=0 or i=1 then global.msg[0]="   * I'm outta here."
      if i=2 then global.msg[0]="   * I've got better to do."
@@ -87,7 +87,7 @@ case argument0=14: //RUNNING AWAY
      if i=3 then global.msg[0]="   * Don't slow me down."
      break;
      
-case argument0=15: //save pt
+case 15: //save pt
      if room=room_ruins1 then global.msg[0]="* (The shadow of the ruins&  looms above^1, filling you with&  determination.)/%%"
      if room=room_ruins7 then global.msg[0]="* (Playfully crinkling through&  the leaves fills you with&  determination.)/%%"
      if room=room_ruins12A then { global.msg[0]="* (Knowing the mouse might one&  day leave its hole and&  get the cheese...)/"; global.msg[1]="* (It fills you with&  determination.)/%%"; }
@@ -95,39 +95,40 @@ case argument0=15: //save pt
      if global.flag[202]>=monsterpopulation1 then global.msg[0]="* Determination./%%"
      break;
      
-case argument0=16: //putting away an item
+case 16: //putting away an item
      i=round(random(14))
-     script_execute(scr_itemname)
+     //TODO: Actually checks if i need to put arguments here
+     scr_itemname(argument0)
      if i<=12 then global.msg[0]="* The " + global.itemname[global.menucoord[6]] + " was&  put away."
      if i>12 then global.msg[0]="* The " + global.itemname[global.menucoord[6]] + " was&  tossed inside recklessly."
      if i>13 then global.msg[0]="* The " + global.itemname[global.menucoord[6]] + " was&  placed thoughtfully inside."
      global.msg[0]+="/%"
      break;
      
-case argument0=17: //getting an item
+case 17: //getting an item
      i=round(random(14))
-     script_execute(scr_storagename,300)
+     scr_storagename(300)
       if i<=12 then global.msg[0]="* The " + global.itemname[global.menucoord[7]] + " was&  taken out."
      if i>12 then global.msg[0]="* The " + global.itemname[global.menucoord[7]] + " was&  grabbed impatiently."
      if i>13 then global.msg[0]="* The " + global.itemname[global.menucoord[7]] + " was&  taken out and held like a&  small puppy."
      global.msg[0]+="/%"
      break;
 
-case argument0=18: //can't carry any more
+case 18: //can't carry any more
         global.msg[0]="* You can't carry any more./%%"
         break;
         
-case argument0=19: //can't carry any more
+case 19: //can't carry any more
         global.msg[0]="* The box is full./%%"
         break;
 
-case argument0=30: //itembox1
+case 30: //itembox1
         global.msg[0]="* Use the box?& &         Yes         No      \C /"
         global.msg[1]=" "
         global.msg[2]=" "
         break;
         
-case argument0=31: //itembox2
+case 31: //itembox2
         if global.choice=0 then
           {
          global.msg[0]="* What to do?& &         Put in      Take out\C /"
@@ -137,7 +138,7 @@ case argument0=31: //itembox2
         if global.choice=1 then global.msg[0]="%%"
         break;
         
-case argument0=32: //itembox2
+case 32: //itembox2
         if global.choice=0 then
           {
           if instance_exists(obj_storagemenu)==false
@@ -160,7 +161,7 @@ case argument0=32: //itembox2
      
 // main script
      
-case argument0=200: //flowey's first message
+case 200: //flowey's first message
      global.msg[0]="\W* Howdy^2!&* I'm\Y FLOWEY\W.^2 &* \YFLOWEY\W the \YFLOWER\W!/"
      global.msg[1]="* Hmmm.../"
      global.msg[2]="* You're new to the&  UNDERGROUND^2, aren'tcha?/"
@@ -170,56 +171,56 @@ case argument0=200: //flowey's first message
      global.msg[6]="* Ready^2?&* Here we go!/%%"
      break;
      
-case argument0=201: //toriel says "this way"
+case 201: //toriel says "this way"
      global.msg[0]="\E2* This way./%%"
      global.msg[1]="%%%"
      break;
      
-case argument=202: //toriel from here on
+case 202: //toriel from here on
      global.msg[0]="\E2* Welcome to your new&  home^1, innocent one./"
      global.msg[1]="* Allow me to educate you&  in the operation of the&  RUINS./%%"
      break;
      
-case argument=203:
+case 203:
      global.msg[0]="\E2* The RUINS are full of&  puzzles./"
      global.msg[1]="* Ancient fusions between &  diversions and doorkeys./"
     global.msg[2]="* One must solve them&  to move from room to&  room./"
     global.msg[3]="* Please adjust yourself    to the sight of them./%"
     break;
 
-case argument=204:
+case 204:
     global.msg[0]="\E2* To make progress here,^1 &  you will need to trigger&  several switches./"
     global.msg[1]="* Do not worry,^1 I have &  labelled the ones that&  you need to flip./%"
     break;
 
-case argument=205:
+case 205:
     global.msg[0]="\E2* The first switch is over&  on the wall./%"
     break;
 
-case argument=206:
+case 206:
     global.msg[0]="\E1* Do you need some help..^1?&* Press the switch on the   wall./"
     global.msg[1]="\E0* Come on^1, you can do it!/%"
     break;
 
-case argument=207:
+case 207:
     global.msg[0]="\E2* Go on^1, press the switch&  on the left./%"
     break;    
-case argument=208:
+case 208:
     global.msg[0]="\E1* You do know which way&  left is^1, do you not?/"
     global.msg[1]="\E0* Press the switch that I&  labelled for you./%"
     break;
 
-case argument=209:
+case 209:
 global.msg[0]="\E1* You are very curious,^1 &  are you not?/"
 global.msg[1]="\E1* Please understand.^2 & \E0I only want the best&  for you./%"
 break;
 
-case argument=210:
+case 210:
 global.msg[0]="\E0* Splendid!^2 &* I am proud of you,^1 &  little one./"
 global.msg[1]="* Let us move to the&  next room./%"
 break;
 
-case argument=211:
+case 211:
 global.msg[0]="\E1* As a human living in&  the UNDERGROUND,^1 &  monsters may attack you./"
 global.msg[1]="\E2* You will need to be&  prepared for this&  situation./"
 global.msg[2]="\E0* However, worry not!^2 &* The process is simple./"
@@ -229,7 +230,7 @@ global.msg[5]="\E2* Stall for time.&  I will come to resolve&  the conflict./"
 global.msg[6]="\E2* Practice talking to&  the dummy./%"
 break;
 
-case argument=212:
+case 212:
 if global.flag[12]=1
    {
    global.msg[0]="\E1* Ahh,^1 the dummies are&  not for fighting!^2 &* They are for talking!/"
@@ -257,13 +258,13 @@ global.msg[2]="\E0* The next room awaits./%"
   }
 break;
 
-case argument=213:
+case 213:
 global.msg[0]="\E2* Practice talking to&  the dummy./"
 global.msg[1]="\E1* You can say anything..^2.\E2 &* I do not think the dummy&  will be bothered./%"
 break;
 
 
-case argument=214:
+case 214:
 global.msg[0]="\E0* Do you need some&  ideas for conversation&  topics?/"
 global.msg[1]="* Well^1, I often start with&  a simple 'how do you&  do...'/"
 global.msg[2]="* You could ask them about&  their favorite books.../"
@@ -275,30 +276,30 @@ global.msg[7]="\E1* .../"
 global.msg[8]="\E0* Well^1, I thought it&  was amusing./%"
 break;
 
-case argument=215:
+case 215:
 global.msg[0]="\E2* Practice talking to&  the dummy./"
 global.msg[1]="\E1* You can say anything..^2.\E0 &* The dummy will not&  be bothered./%"
 break;
 
-case argument=216:
+case 216:
 global.msg[0]="\E1* There is another puzzle&  in this room.../"
 global.msg[1]="\E0* I wonder if you can&  solve it?/%"
 break;
 
-case argument=217:
+case 217:
 global.msg[0]="\E1* This is the puzzle^1,&  but.../"
 global.msg[1]="\E0* Here^1, take my hand&  for a moment./%"
 break;
 
-case argument=218:
+case 218:
 global.msg[0]="\E1* Puzzles seem a little&  too dangerous for&  now./%"
 break;
 
-case argument=219:
+case 219:
 global.msg[0]=".../%"
 break;
 
-case argument=220:
+case 220:
 global.msg[0]="\E2* Greetings,^1 my child^2.&* Do not worry^1, I did&  not leave you./"
 global.msg[1]="\E0* I was merely behind this&  pillar the whole time./"
 global.msg[2]="* Thank you for trusting&  me./"
@@ -311,7 +312,7 @@ global.msg[8]="* If you have a need for&  anything^1, just call./"
 global.msg[9]="\E1* Be good^1, alright?/%"
 break;
 
-case argument=221:
+case 221:
 global.msg[0]="\E0* You have done&  excellently thus&  far^1, my child./"
 global.msg[1]="\E2* However... I have a&  difficult request to ask&  of you./"
 global.msg[2]="* .../"
@@ -319,7 +320,7 @@ global.msg[3]="* I would like you to walk&  to the end of the room&  by yourself
 global.msg[4]="\E1* Forgive me for this./%"
 break;
 
-case argument=222:
+case 222:
 global.msg[0]="* Ring..\E0.\TT /"
 global.msg[1]="\F1 %"
 global.msg[2]="* Hello?&* This is TORIEL./"
@@ -328,7 +329,7 @@ global.msg[4]="* Cinnamon or&  butterscotch?&  Cinnamon    Bscotch \C /"
 global.msg[5]=" "
 break;
 
-case argument=223:
+case 223:
 if global.choice=0 then global.flag[46]=0
 if global.choice=1 then global.flag[46]=1
 global.msg[0]="* Oh^1, I see.&* Thank you very much!/"
@@ -338,28 +339,28 @@ global.msg[5]="* /"
 break;
 
 
-case argument0=500: //flowers
+case 500: //flowers
      global.msg[0]="* Beautiful flowers^2.&* They must have&  broken your fall./%%"
      global.msg[1]="%%%"
      break;
      
-case argument0=501: //sign
+case 501: //sign
      global.msg[0]='* "Press [Z] to read signs!"/%%'
      break;
      
-case argument0=502: //pillar1
+case 502: //pillar1
      global.msg[0]='* Just a regular old pillar./%%'
      break;
 
-case argument0=503: //sign1
+case 503: //sign1
      global.msg[0]="* Please don't step on the&  leaves./%%"
      break;
 
-case argument0=504: //sign1
+case 504: //sign1
      global.msg[0]="* Didn't you read the sign&  downstairs?/%%"
      break;
 
-case argument0=505: //goofyrock
+case 505: //goofyrock
      conversation=obj_goofyrock.conversation
      if global.flag[33]=0 then
      {
@@ -391,7 +392,7 @@ case argument0=505: //goofyrock
      global.msg[0]="* Aren't things easier when&  you just ask?/%%"
      break; 
      
-case argument0=508:
+case 508:
      doak=0
      noroom=0
      if global.flag[34]<4 then
@@ -402,7 +403,7 @@ case argument0=508:
      else global.msg[0]="* Look at what you've done./%%"
      break;
 
-case argument0=509:
+case 509:
      if global.choice=0 then
            {
                if global.flag[34]<4 then
@@ -410,7 +411,7 @@ case argument0=509:
                if doak=0 then
                   {
                   doak=1
-                  script_execute(scr_itemget,1)
+                  scr_itemget(1)
                   if noroom=0 then global.flag[34]+=1
                   }
                }
@@ -429,14 +430,14 @@ case argument0=509:
            }
            break;
 
-case argument0=510:
+case 510:
      global.msg[0]="* zzzzzzzzzzzzzzz..^1.&* zzzzzzzzzzzzzz.../"
      global.msg[1]="* zzzzzzzzzz..^1.&* (are they gone yet^1)&* zzzzzzzzzzzzzzz.../"
      global.msg[2]="* (This ghost keeps saying 'z'&  out loud repeatedly^1,&  pretending to sleep.)/"
      global.msg[3]="* Move it with force?& &         Yes         No \C"
      break;
 
-case argument0=511:
+case 511:
        global.msg[0]="%%"
     // if global.choice=0 then
      //      {
@@ -453,21 +454,21 @@ case argument0=511:
        //    }
            break;
        
-case argument0=512:
+case 512:
      doak=0
      noroom=0
      global.msg[0]="* It says 'Take them all.'&* Take a candy?&         Yes         No \C"
      break;
 
-case argument0=513:
-     script_execute(scr_itemcheck,5)
+case 513:
+     scr_itemcheck(5)
      if global.choice=0 then
                {
                if haveit=0 then
                if doak=0 then
                   {
                   doak=1
-                  script_execute(scr_itemget,5)
+                  scr_itemget(5)
                   }
                }
            if noroom=0 then 
@@ -482,21 +483,21 @@ case argument0=513:
              }
            break;
      
-case argument0=514:
+case 514:
      doak=0
      noroom=0
      global.msg[0]="* Leave 7G in the web?& &         Yes         No \C"
      break;
 
-case argument0=515:
-     script_execute(scr_cost,7)
+case 515:
+     scr_cost(7)
      if global.choice=0 then
                {
                if afford=1 then
                if doak=0 then
                   {
                   doak=1
-                  script_execute(scr_itemget,7)
+                  scr_itemget(7)
                   if noroom=0 then global.gold-=7
                   }
                }
@@ -512,21 +513,21 @@ case argument0=515:
              }
            break;
            
-case argument0=516:
+case 516:
      doak=0
      noroom=0
      global.msg[0]="* Leave 18G in the web?& &         Yes         No \C"
      break;
 
-case argument0=517:
-     script_execute(scr_cost,18)
+case 517:
+     scr_cost(18)
      if global.choice=0 then
                {
                if afford=1 then
                if doak=0 then
                   {
                   doak=1
-                  script_execute(scr_itemget,10)
+                  scr_itemget(10)
                   if noroom=0 then global.gold-=18
                   }
                }
@@ -542,10 +543,10 @@ case argument0=517:
              }
            break;
 
-case argument0=518:
+case 518:
      if doak=0 then
         {
-          script_execute(scr_itemget,12)
+          scr_itemget(12)
           if noroom=0 then global.flag[100]=1
           doak=1
         }
@@ -553,13 +554,13 @@ case argument0=518:
      if noroom=1 then global.msg[0]="* You are carrying too&  much./%%"
      break;
      
-case argument0=519:
+case 519:
      doak=0
      noroom=0
      global.msg[0]="* It's a switch.&* Press it?&         Yes         No \C"
      break;
 
-case argument0=520:
+case 520:
      if doak=0 then
         {
         global.flag[43]+=1
@@ -570,13 +571,13 @@ case argument0=520:
      if global.flag[43]>25 then global.msg[0]= "* You're making the switches&  uncomfortable with all&  this attention./%%"
      break;
      
-case argument0=521:
+case 521:
      doak=0
      noroom=0
      global.msg[0]="* It's a switch.&* Press it?&         Yes         No \C"
      break;
      
-case argument0=522:
+case 522:
      if doak=0 then
         {
         global.flag[43]+=1
@@ -586,10 +587,10 @@ case argument0=522:
      if global.choice=1 then global.msg[0]="%%"
      break;
      
-case argument0=523:
+case 523:
      if doak=0 then
         {
-          script_execute(scr_itemget,13)
+          scr_itemget(13)
           if noroom=0 then global.flag[102]=1
           doak=1
         }
@@ -597,21 +598,21 @@ case argument0=523:
      if noroom=1 then global.msg[0]="* You are carrying too&  much./%%"
      break;
 
-case argument0=524:
+case 524:
      doak=0
      noroom=0
      global.msg[0]="* It's TORIEL's diary.&* Read the circled passage?&         Yes         No \C"
      break;
      
-case argument0=525:
+case 525:
      if global.choice=0 then { global.msg[0]="* You read the passage.../"; global.msg[1]='"* Why did the skeleton want&   a friend?"/' global.msg[2]='"* Because she was feeling&   BONELY..."/' global.msg[3]="* The rest of the page is&  filled with jokes of&  a similar caliber./%%"}
      if global.choice=1 then global.msg[0]="%%"
      break;
      
-case argument0=526:
+case 526:
      if doak=0 then
         {
-          script_execute(scr_itemget,11)
+          scr_itemget(11)
           if noroom=0 then global.flag[103]=2
           doak=1
         }
@@ -619,14 +620,14 @@ case argument0=526:
      if noroom=1 then global.msg[0]="* You are carrying too&  much./%%"
      break;
 
-case argument0=527:
+case 527:
 global.msg[0]="* Hello there^1,&  little one!/"
 global.msg[1]="* The pie has not&  cooled down yet./"
 global.msg[2]="* Perhaps you should&  take a nap.&  Yes         No      \C /"
 global.msg[3]=" "
 break;
 
-case argument0=528:
+case 528:
      global.plot=19.1
      if global.choice=0 then { global.msg[0]="* Sweet dreams./%%" ; }
      else 
@@ -648,7 +649,7 @@ case argument0=528:
             }
      break;
 
-case argument0=529:
+case 529:
 global.plot=19.2
 if global.choice=0 then
    {
@@ -666,7 +667,7 @@ if global.choice=0 then
     }
 break;
     
-case argument0=530:
+case 530:
     global.plot=19.3
     global.msg[0]="* Here is an exciting&  snail fact./"
     if global.choice=1 then global.msg[0]="\E1* Um^1.^1.^1.&*\E0 How about an exciting&  snail fact?/"
@@ -680,7 +681,7 @@ case argument0=530:
     global.msg[4]=" "
 break;
 
-case argument0=531:
+case 531:
     global.plot=19.4
     if global.choice=0 then global.msg[0]="* Well^1, bother me&  if you need anything&  else./%%"
     else
@@ -693,12 +694,12 @@ case argument0=531:
       }
     break;
     
-case argument0=532:
+case 532:
     if global.choice=0 then global.msg[0]="* If you need anything^1,&  just ask./%%"
     if global.choice=1 then{  global.msg[0]="\E1* ... I have to do&  something.&* Stay here./%%."; global.plot=19.9; }
 break;
     
-case argument0=666: //flowey
+case 666: //flowey
      global.msg[0]="See that heart^1? &That is your SOUL^1,&the very culmination&of your being!/"
      global.msg[1]="Your SOUL starts off&weak^1, but can grow&strong if you gain&a lot of LV./"
      global.msg[2]="What's LV stand for^1?&Why^1, LOVE^1, of course!/"
@@ -706,39 +707,39 @@ case argument0=666: //flowey
      global.msg[4]="Don't worry,&I'll share some&with you!/%"
      break;
 
-case argument0=667:
+case 667:
      global.msg[0]="Down here^1, LOVE is&shared through..^1./"
      global.msg[1]='Little white..^2.\E1 &"friendliness&pellets."/'
      global.msg[2]="\E2Are you ready\E0?/%"
     break;
 
-case argument0=668:
+case 668:
      global.msg[0]="Move around^1!&Get as many as&you can^2!%%%"
      global.msg[1]="%%%"
     break;
 
-case argument0=669:
+case 669:
      global.msg[0]="You idiot./"
      global.msg[1]="In this world^1, it's&kill or BE killed./"
      global.msg[2]="Why would ANYONE pass&up an opportunity&like this!?/%"
     break;
 
-case argument0=670:
+case 670:
      global.msg[0]="Die./%"
      break;
      
-case argument0=671:
+case 671:
      global.msg[0]="Hey buddy^1,&you missed them./"
      global.msg[1]="Let's try again^1,&okay?/%"
      break;
-case argument0=672:
+case 672:
      global.msg[0]="Is this a joke^2?&Are you braindead^2?&RUN^2. INTO^2. THE^2.&BULLETS!!!"
      break;
-case argument0=673:
+case 673:
      global.msg[0]="You know what's&going on here^1,&don't you?/"
      global.msg[1]="You just wanted to&see me suffer./%"
      break;
-case argument0=674:
+case 674:
      global.msg[0]="\E1What a cretin^1,&torturing such a&poor^1, innocent&youth.../"
      global.msg[1]="\E2Ah, do not be&afraid^1, my child./"
      global.msg[2]="\XI am \BTORIEL\X,&caretaker of&the \RRUINS\X./"
@@ -751,7 +752,7 @@ case argument0=674:
      break;
      
 // talk choices
-case argument0=1001:
+case 1001:
      global.msg[0]="   * Check         * Compliment&   * Threat";
      global.choices[0] = 1
      global.choices[1] = 1
@@ -762,7 +763,7 @@ case argument0=1001:
         break;
 
         //dummy
-case argument0=1002:
+case 1002:
      global.msg[0]="   * Check         * Talk";
      global.choices[0] = 1
      global.choices[1] = 0
@@ -773,7 +774,7 @@ case argument0=1002:
         break;
 
 // fake froggit
-case argument0=1003:
+case 1003:
      global.msg[0]="   * Check         * Compliment&   * Threat";
      global.choices[0] = 1
      global.choices[1] = 1
@@ -784,7 +785,7 @@ case argument0=1003:
         break;                
 
 // real froggit
-case argument0=1004:
+case 1004:
      global.msg[0]="   * Check         * Compliment&   * Threat";
      global.choices[0] = 1
      global.choices[1] = 1
@@ -795,7 +796,7 @@ case argument0=1004:
         break;               
         
 // whimsun
-case argument0=1005:
+case 1005:
      global.msg[0]="   * Check         * Console&   * Terrorize";
      global.choices[0] = 1
      global.choices[1] = 1
@@ -805,7 +806,7 @@ case argument0=1005:
      global.choices[5] = 0
         break;
 
-case argument0=1006: // moldsmal
+case 1006: // moldsmal
      global.msg[0]="   * Check         * Imitate&   * Flirt";
      global.choices[0] = 1
      global.choices[1] = 1
@@ -815,7 +816,7 @@ case argument0=1006: // moldsmal
      global.choices[5] = 0
         break;
 
-case argument0=1007: // migosp
+case 1007: // migosp
      global.msg[0]="   * Check         * Talk";
      global.choices[0] = 1
      global.choices[1] = 0
@@ -825,7 +826,7 @@ case argument0=1007: // migosp
      global.choices[5] = 0
         break;
         
-case argument0=1008: // vegetoid
+case 1008: // vegetoid
      global.msg[0]="   * Check         * Talk&   * Eat";
      global.choices[0] = 1
      global.choices[1] = 1
@@ -835,7 +836,7 @@ case argument0=1008: // vegetoid
      global.choices[5] = 0
         break;
         
-case argument0=1009: // Loox
+case 1009: // Loox
      global.msg[0]="   * Check         * Pick On&   * Don't Pick On";
      global.choices[0] = 1
      global.choices[1] = 1
@@ -845,7 +846,7 @@ case argument0=1009: // Loox
      global.choices[5] = 0
         break;
         
-case argument0=1010: // Toriel
+case 1010: // Toriel
      global.msg[0]="   * Check         * Talk";
      global.choices[0] = 1
      global.choices[1] = 0
@@ -855,7 +856,7 @@ case argument0=1010: // Toriel
      global.choices[5] = 0
         break;
         
-case argument0=1011: // napstablook
+case 1011: // napstablook
      global.msg[0]="   * Check         * Flirt&   * Threat        * Cheer";
      global.choices[0] = 1
      global.choices[1] = 1
@@ -865,7 +866,7 @@ case argument0=1011: // napstablook
      global.choices[5] = 0
         break;
         
-case argument0>=1012 and argument0<=1015: // doges
+/*case argument0>=1012 and argument0<=1015: // doges
      global.msg[0]="   * Check         * Beckon&   * Bathe         * Dry  &   * Walk          * Pet  ";
      global.choices[0] = 1
      global.choices[1] = 1
@@ -873,11 +874,11 @@ case argument0>=1012 and argument0<=1015: // doges
      global.choices[3] = 1
      global.choices[4] = 1
      global.choices[5] = 1
-        break;   
+        break;*/   
         
         
 // phone dialogue
-case argument0=1501:
+case 1501:
      global.msg[0]="* Dialing..\E0.\TT /"
      if doak=0 then
         {
@@ -929,7 +930,7 @@ case argument0=1501:
        }
         break;
         
-case argument0=1502:
+case 1502:
      global.msg[0]="* Dialing..\E0.\TT /"
      global.msg[1]="\F1 %"
      global.msg[2]="* This is TORIEL./"
@@ -940,7 +941,7 @@ case argument0=1502:
      global.msg[7]="* Click.../%%"
      break;
 
-case argument0=1503: // about yourself
+case 1503: // about yourself
      global.msg[0]="* Dialing..\E0.\TT /"
      global.msg[1]="\F1 %"
      global.msg[2]="* This is TORIEL./"
@@ -951,7 +952,7 @@ case argument0=1503: // about yourself
      global.msg[7]="* Click.../%%"
      break;
 
-case argument0=1504: // call her mom
+case 1504: // call her mom
      global.flag[42]=1
      global.msg[0]="* Dialing..\E0.\TT /"
      global.msg[1]="\F1 %"
@@ -965,7 +966,7 @@ case argument0=1504: // call her mom
      global.msg[9]="* Click.../%%"
      break;
      
-case argument0=1505: // flirt
+case 1505: // flirt
      if doak=0 then
         {
         doak=1
@@ -1000,14 +1001,14 @@ case argument0=1505: // flirt
      }
      break;
 
-case argument0=1506: // nobody's home
+case 1506: // nobody's home
      global.flag[42]=1
      global.msg[0]="* Dialing... /"
      global.msg[1]="* ... /"
      global.msg[2]="* No one picked up.../%%"
      break;
 
-case argument0=1507:
+case 1507:
      global.faceemotion=99
      global.msg[0]="* Dialing...\TT /"
      global.msg[1]="\F1 %"
@@ -1021,13 +1022,13 @@ case argument0=1507:
 
 
 // npc dialogue
-case argument0=2001:
+case 2001:
      global.msg[0]="\E2* Welcome to your new& home,^1 innocent one./"
      global.msg[1]="* Allow me to educate you&  in the operation of&  the RUINS./%"
      break;
 
 
-case argument0=2002: // toriel flirt phone call
+case 2002: // toriel flirt phone call
      global.faceplate=1
      global.msg[0]="\E8* ...^2 huh???/"
      global.msg[1]="\E1* Oh,^1 heh..^1 heh...^1 \E0 &* Ha ha ha!/"
@@ -1042,37 +1043,37 @@ case argument0=2002: // toriel flirt phone call
      // "
      break;
      
-case argument0=3002: //battle intro messages
+case 3002: //battle intro messages
      global.msg[0]="* You encountered the Dummy."
      global.msg[1]="%%%"     
      break;
 
-case argument0=3003: //froggit
+case 3003: //froggit
      global.msg[0]="* Froggit attacks you!"
      global.msg[1]="%%%"     
      break;
      
-case argument0=3004: //froggit
+case 3004: //froggit
      global.msg[0]="* Froggit hopped close!"
      global.msg[1]="%%%"     
      break;
 
-case argument0=3005: //whimsun
+case 3005: //whimsun
      global.msg[0]="* Whimsun approached meekly!"
      global.msg[1]="%%%"     
      break;
      
-case argument0=3006: //whimsun
+case 3006: //whimsun
      global.msg[0]="* Froggit and Whimsun drew near!"
      global.msg[1]="%%%"     
      break;
 
-case argument0=3007: //moldsmal
+case 3007: //moldsmal
      global.msg[0]="* Moldsmal blocked the way!"
      global.msg[1]="%%%"     
      break;     
                
-case argument0=9999: // test line
+case 9999: // test line
      i=0
      fileid=file_text_open_read("testlines.txt")
      while (file_text_eof(fileid))=false

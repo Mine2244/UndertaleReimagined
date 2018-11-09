@@ -12,11 +12,12 @@ while (loop=1)
         }
      if i=8 then
         {
-        script_execute(scr_itemnospace)
+        scr_itemnospace()
         break;
         }
         i+=1
    }
 
-script_execute(scr_itemnameb)
-script_execute(scr_itemname)
+//TODO: Actually checks if i need to put arguments here
+scr_itemnameb(argument0)
+scr_itemname(argument0)

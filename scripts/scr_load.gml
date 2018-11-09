@@ -1,6 +1,6 @@
 filechoicebk=global.filechoice
 room_set_persistent(global.currentroom,0)
-script_execute(SCR_GAMESTART)
+SCR_GAMESTART()
 global.filechoice=filechoicebk
 //now load everything that isnt default
 
@@ -52,7 +52,7 @@ file_text_close(myfileid)
 global.hp=global.maxhp
 global.en=global.maxen
 
-script_execute(scr_tempsave)
+scr_tempsave()
 
 room_goto(global.currentroom)
 
